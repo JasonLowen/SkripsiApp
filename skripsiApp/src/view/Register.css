@@ -1,0 +1,75 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+    /* background-color: #00FF00; */
+    background: url(../assets/background-login.jpg)no-repeat;
+    background-size: cover;
+}
+.registerContainer{
+    position: relative;
+    width: 400px;
+    height: 430px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.registerContent button{
+    width: 70%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.registerContent button:hover{
+    opacity: 0.7;
+    transition: .2s;
+}
+
+.registerContent button:active{
+    opacity: 0.5;
+    transition: .2s;
+}
+
+.registerContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 90px;
+    gap: 40px;
+}
+
+.registerContent .backToLogin{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.registerContent .backToLogin:hover{
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
