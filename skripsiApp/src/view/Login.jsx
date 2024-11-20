@@ -1,25 +1,67 @@
 import React from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [users, setUsers] = useState([]);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+        const loginData = {
+            Email: email,
+            Password: password,
+        };
+      const response = await fetch('http://localhost:3000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch users');
+      }
+      const result = await response.json();
+      setUsers(result);
+      if(response.status == 200){
+        if(result == "Student"){
+            window.location.href = "/register";
+        }
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+
   return (
     <section id='loginPage'>
         <div class="loginContainer">
             <div class="loginContent">
-                <form action="">
+                <form onSubmit={handleLogin}>
                     <h2>Login</h2>
                     <div class="loginInput">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required />
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
                         <label htmlFor="email">Email</label>
                     </div>
                     <div class="loginInput">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
                         <label htmlFor="password">Password</label>
                     </div>
-                    <button>Log in</button>
+                    <button type='submit'>Log in</button>
                     <div class="register">
                         <p>Don't have an account? <Link to="/register">Register</Link></p>
                     </div>

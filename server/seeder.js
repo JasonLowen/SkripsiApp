@@ -78,6 +78,7 @@ async function run(){
                 TipeSkripsi VARCHAR(255),
                 FileSkripsi VARCHAR(255),
                 StatusSkripsi VARCHAR(255),
+                TanggalSidang DATE,
                 FOREIGN KEY (nim) REFERENCES mahasiswa(NIM) ON DELETE CASCADE,
                 FOREIGN KEY (dosenID) REFERENCES dosen(DosenID) ON DELETE CASCADE,
                 FOREIGN KEY (staffID) REFERENCES staff(StaffID) ON DELETE CASCADE
@@ -170,18 +171,18 @@ async function run(){
         console.log("Staff data inserted");
         
         await mysql.query(
-            `INSERT INTO skripsi (nim, dosenID, staffID, JudulSkripsi, TopikSkripsi, TipeSkripsi, StatusSkripsi, FileSkripsi)
+            `INSERT INTO skripsi (nim, dosenID, staffID, JudulSkripsi, TopikSkripsi, TipeSkripsi, StatusSkripsi, FileSkripsi, TanggalSidang)
             VALUES
-            ('2602348593', 'D4821', 'S4832', 'Impact of AI on Education', 'Artificial Intelligence', 'Quantitative Research', 'Pending', '/images/skripsi1.pdf'),
-            ('2602671048', 'D7610', 'S7619', 'Renewable Energy in Indonesia', 'Renewable Energy', 'Qualitative Research', 'Accepted', '/images/skripsi2.pdf'),
-            ('2602176395', 'D2348', 'S3950', 'Digital Marketing Strategies', 'Digital Marketing', 'Descriptive Study', 'Scheduled', '/images/skripsi3.pdf'),
-            ('2602849012', 'D5937', 'S2408', 'Blockchain for Transparency', 'Blockchain Technology', 'Case Study', 'Accepted', '/images/skripsi4.pdf'),
-            ('2602923476', 'D8094', 'S8724', 'Remote Work Culture Analysis', 'Workplace Culture', 'Comparative Analysis', 'Pending', '/images/skripsi5.pdf'),
-            ('2602348760', 'D4562', 'S5371', 'Advancing Healthcare Systems', 'Healthcare Systems', 'Experimental Study', 'Pending', '/images/skripsi6.pdf'),
-            ('2602990043', 'D2719', 'S6490', 'Cybersecurity Trends 2024', 'Cybersecurity', 'Correlational Study', 'Scheduled', '/images/skripsi7.pdf'),
-            ('2602143987', 'D9403', 'S8293', 'Climate Change Adaptation', 'Climate Science', 'Survey Research', 'Pending', '/images/skripsi8.pdf'),
-            ('2602726184', 'D2348', 'S1027', 'Mobile App Usability Study', 'Mobile Applications', 'Action Research', 'Accepted', '/images/skripsi9.pdf'),
-            ('2602607831', 'D5937', 'S3476', 'AI-Powered Language Learning', 'Educational Technologies', 'Historical Analysis', 'Scheduled', '/images/skripsi10.pdf')`
+            ('2602348593', 'D4821', 'S4832', 'Impact of AI on Education', 'Artificial Intelligence', 'Quantitative Research', 'Pending', '/images/skripsi1.pdf', '2025-02-16'),
+            ('2602671048', 'D7610', 'S7619', 'Renewable Energy in Indonesia', 'Renewable Energy', 'Qualitative Research', 'Accepted', '/images/skripsi2.pdf', '2024-11-18'),
+            ('2602176395', 'D2348', 'S3950', 'Digital Marketing Strategies', 'Digital Marketing', 'Descriptive Study', 'Scheduled', '/images/skripsi3.pdf', '2020-09-22'),
+            ('2602849012', 'D5937', 'S2408', 'Blockchain for Transparency', 'Blockchain Technology', 'Case Study', 'Accepted', '/images/skripsi4.pdf', '2021-04-02'),
+            ('2602923476', 'D8094', 'S8724', 'Remote Work Culture Analysis', 'Workplace Culture', 'Comparative Analysis', 'Pending', '/images/skripsi5.pdf', '2025-08-11'),
+            ('2602348760', 'D4562', 'S5371', 'Advancing Healthcare Systems', 'Healthcare Systems', 'Experimental Study', 'Pending', '/images/skripsi6.pdf', '2022-07-09'),
+            ('2602990043', 'D2719', 'S6490', 'Cybersecurity Trends 2024', 'Cybersecurity', 'Correlational Study', 'Scheduled', '/images/skripsi7.pdf', '2024-08-30'),
+            ('2602143987', 'D9403', 'S8293', 'Climate Change Adaptation', 'Climate Science', 'Survey Research', 'Pending', '/images/skripsi8.pdf', '2022-01-17'),
+            ('2602726184', 'D2348', 'S1027', 'Mobile App Usability Study', 'Mobile Applications', 'Action Research', 'Accepted', '/images/skripsi9.pdf', '2024-11-03'),
+            ('2602607831', 'D5937', 'S3476', 'AI-Powered Language Learning', 'Educational Technologies', 'Historical Analysis', 'Scheduled', '/images/skripsi10.pdf', '2022-06-27')`
         );
         
         console.log("Skripsi data inserted");

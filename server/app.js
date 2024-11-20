@@ -3,15 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 // var dosensRouter = require('./routes/dosen');
 // var mahasiswasRouter = require('./routes/mahasiswa');
 // var staffsRouter = require('./routes/staff');
 // var skripsisRouter = require('./routes/skripsi');
 
 var app = express();
+
+app.use(cors());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -23,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api/users', usersRouter);
 // app.use('/api/mahasiswas', mahasiswasRouter);
 // app.use('/api/dosens', dosensRouter);
 // app.use('/api/staffs', staffsRouter);
