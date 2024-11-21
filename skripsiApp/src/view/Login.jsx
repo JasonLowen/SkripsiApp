@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -6,7 +6,6 @@ import { useState } from 'react'
 export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [users, setUsers] = useState([]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,16 +25,26 @@ export const Login = () => {
         throw new Error('Failed to fetch users');
       }
       const result = await response.json();
-      setUsers(result);
       if(response.status == 200){
+        localStorage.setItem('email', email);
         if(result == "Student"){
-            window.location.href = "/register";
+            window.location.href = "/homeStudent";
+        }
+        else if(result == "Lecturer"){
+            window.location.href = "/homeLecturer";
+        }
+        else if(result == "Staff"){
+            window.location.href = "/homeStaff";
         }
       }
     } catch (error) {
       console.error('Error:', error.message);
     }
   };
+
+  useEffect(() => {
+    localStorage.removeItem('email');
+    }, []);
 
   return (
     <section id='loginPage'>

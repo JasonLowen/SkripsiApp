@@ -10,7 +10,7 @@ section{
     min-height: 100vh;
     width: 100%; 
     /* background-color: #00FF00; */
-    background: url(../assets/background-login.jpg)no-repeat;
+    background: url(../assets/library.jpg)no-repeat;
     background-size: cover;
 }
 .registerLecturerContainer{

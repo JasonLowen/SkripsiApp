@@ -1,7 +1,7 @@
 import React from 'react'
 import './RegisterStudent.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const RegisterStudent = () => {
 
@@ -16,20 +16,26 @@ export const RegisterStudent = () => {
     const [religion, setReligion] = useState('');
     const [major, setMajor] = useState('');
 
+    const generateRandomNIM = () => {
+        const randomNIM = Math.floor(100000 + Math.random() * 900000).toString();
+        const resultNIM = '2602' + randomNIM;
+        return resultNIM;
+      };
+
     const handleRegisterStudent = async (e) => {
     e.preventDefault();
     try {
     const studentData = {
-    NIM: '123456',
-    Nama: name,
-    Email: email,
-    Password: password,
-    Kampus: campus,
-    DOB: dob,
-    Gender: gender,
-    Alamat: address,
-    Agama: religion,
-    Jurusan: major,
+        NIM: generateRandomNIM(),
+        Nama: name,
+        Email: email,
+        Password: password,
+        Kampus: campus,
+        DOB: dob,
+        Gender: gender,
+        Alamat: address,
+        Agama: religion,
+        Jurusan: major,
     };
     const response = await fetch('http://localhost:3000/api/users/registerStudent', {
     method: 'POST',
@@ -38,11 +44,16 @@ export const RegisterStudent = () => {
     },
     body: JSON.stringify(studentData),
     });
+    window.location.href = "/";
     const result = await response.json();
     } catch (error) {
     console.error('Error:', error.message);
     }
     };
+
+    useEffect(() => {
+        localStorage.removeItem('email');
+        }, []);
 
     return (
     <section id='registerStudentPage'>

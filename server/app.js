@@ -7,10 +7,6 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// var dosensRouter = require('./routes/dosen');
-// var mahasiswasRouter = require('./routes/mahasiswa');
-// var staffsRouter = require('./routes/staff');
-// var skripsisRouter = require('./routes/skripsi');
 
 var app = express();
 
@@ -27,10 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-// app.use('/api/mahasiswas', mahasiswasRouter);
-// app.use('/api/dosens', dosensRouter);
-// app.use('/api/staffs', staffsRouter);
-// app.use('/api/skripsis', skripsisRouter);
 
 const run = require('./seeder');
 

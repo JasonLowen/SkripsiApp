@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .homeStudentPage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .emailAccountStudent {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    color: purple;
+    font-weight: bolder;
+  }
+  
+  .logoutButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    color: #007BFF;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #007BFF;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+  
+  .logoutButton:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  /* Container for the Dashboard */
+  .dashboardContainer {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+  }
+  
+  .dashboardContainer h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: orange;
+  }
+  
+  .dashboardContainer h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+  }
+  

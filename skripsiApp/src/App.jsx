@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Home from './view/Home';
 import { Login } from './view/Login';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Register from './view/Register';
 import { RegisterStudent } from './view/RegisterStudent';
 import { RegisterLecturer } from './view/RegisterLecturer';
 import { RegisterStaff } from './view/RegisterStaff';
+import { HomeStudent } from './view/HomeStudent';
+import { HomeLecturer } from './view/HomeLecturer';
+import { HomeStaff } from './view/HomeStaff';
+import { ApplySkripsi } from './view/ApplySkripsi';
+import { UpdateSidang } from './view/UpdateSidang';
 
 function App() {
   // const [data, setData] = useState();
@@ -28,6 +32,11 @@ function App() {
         <Route path='/registerStudent' element={<RegisterStudent />} />
         <Route path='/registerLecturer' element={<RegisterLecturer />} />
         <Route path='/registerStaff' element={<RegisterStaff />} />
+        <Route path='/homeStudent' element={<HomeStudent />} />
+        <Route path='/homeLecturer' element={<HomeLecturer />} />
+        <Route path='/homeStaff' element={<HomeStaff />} />
+        <Route path='/applySkripsi' element={<ApplySkripsi />} />
+        <Route path='/updateSidang' element={<UpdateSidang />} />
       </Routes>
     </Router>
   );

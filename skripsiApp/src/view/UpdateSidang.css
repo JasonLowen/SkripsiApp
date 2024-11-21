@@ -1,0 +1,92 @@
+.container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.updateSidangPage {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.updateSidangPage h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.updateDataInput {
+    margin-bottom: 15px;
+}
+
+.updateDataInput label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.updateDataInput input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.updateDataInput input:focus {
+    outline: none;
+    border-color: #4e73df;
+    background-color: #fff;
+}
+
+.updateSidangPage button {
+    background-color: #4e73df;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.updateSidangPage button:hover {
+    background-color: #2e59d9;
+}
+
+@media (max-width: 600px) {
+    .updateSidangPage {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .updateSidangPage h2 {
+        font-size: 20px;
+    }
+
+    .updateDataInput label {
+        font-size: 14px;
+    }
+
+    .updateDataInput input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

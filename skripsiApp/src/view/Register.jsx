@@ -1,8 +1,12 @@
 import React from 'react'
 import './Register.css'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Register = () => {
+    useEffect(() => {
+        localStorage.removeItem('email');
+        }, []);
   return (
     <section id='registerPage'>
         <div class="registerContainer">

@@ -1,0 +1,121 @@
+.applySkripsiPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.applySkripsiContainer {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.applySkripsiTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.applySkripsiContent form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.applySkripsiInput {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.applySkripsiInput input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.applySkripsiInput input:focus {
+    border-color: #007bff;
+}
+
+.applySkripsiInput label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.applySkripsiPage button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.applySkripsiPage button:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .dropdown:focus {
+    border-color: #007bff;
+  }
+  
+  .dropdown-output {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+
+@media (max-width: 768px) {
+    .applySkripsiContainer {
+        padding: 15px 20px;
+    }
+
+    .applySkripsiTitle {
+        font-size: 20px;
+    }
+}

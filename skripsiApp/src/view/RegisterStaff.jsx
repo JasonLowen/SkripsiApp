@@ -1,7 +1,8 @@
 import React from 'react'
 import './RegisterLecturer.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
 
 export const RegisterStaff = () => {
   const [email, setEmail] = useState('');
@@ -10,11 +11,17 @@ export const RegisterStaff = () => {
   const [name, setName] = useState('');
   const [campus, setCampus] = useState('');
 
+  const generateRandomNIM = () => {
+    const randomNIM = Math.floor(1000 + Math.random() * 9000).toString();
+    const resultNIM = 'S' + randomNIM;
+    return resultNIM;
+  };
+
   const handleRegisterStaff = async (e) => {
     e.preventDefault();
     try {
     const staffData = {
-    StaffID: '123456',
+    StaffID: generateRandomNIM(),
     Nama: name,
     Email: email,
     Password: password,
@@ -27,11 +34,16 @@ export const RegisterStaff = () => {
     },
     body: JSON.stringify(staffData),
     });
+    window.location.href = "/";
     const result = await response.json();
     } catch (error) {
     console.error('Error:', error.message);
     }
     };
+
+    useEffect(() => {
+        localStorage.removeItem('email');
+        }, []);
 
   return (
     <section id='registerLecturerPage'>
